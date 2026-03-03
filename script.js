@@ -4,7 +4,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // ── Scroll Progress Bar ──────────────────────
+  // -- Scroll Progress Bar
   const progressBar = document.getElementById('scroll-progress');
   window.addEventListener('scroll', () => {
     const scrollTop = window.scrollY;
@@ -13,18 +13,16 @@ document.addEventListener('DOMContentLoaded', () => {
     progressBar.style.width = pct + '%';
   });
 
-  // ── Navbar scroll effect ─────────────────────
+  // -- Navbar scroll effect
   const navbar = document.getElementById('navbar');
   const navLinks = document.querySelectorAll('.nav-links a[data-section]');
-  
+
   window.addEventListener('scroll', () => {
     if (window.scrollY > 60) {
       navbar.classList.add('scrolled');
     } else {
       navbar.classList.remove('scrolled');
     }
-
-    // Active link highlighting
     const sections = document.querySelectorAll('section[id]');
     let current = '';
     sections.forEach(sec => {
@@ -36,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // ── Mobile Nav ───────────────────────────────
+  // -- Mobile Nav
   const hamburger = document.querySelector('.hamburger');
   const mobileNav = document.querySelector('.mobile-nav');
   hamburger.addEventListener('click', () => {
@@ -50,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // ── Smooth scroll for nav ────────────────────
+  // -- Smooth scroll
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', e => {
       const target = document.querySelector(anchor.getAttribute('href'));
@@ -62,10 +60,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // ── Scroll fade animations ───────────────────
+  // -- Scroll fade animations
   const observerOptions = { threshold: 0.12, rootMargin: '0px 0px -40px 0px' };
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
+    entries.forEach((entry) => {
       if (entry.isIntersecting) {
         const delay = entry.target.dataset.delay || 0;
         setTimeout(() => {
@@ -76,33 +74,29 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }, observerOptions);
 
-  document.querySelectorAll('.fade-up, .fade-in').forEach((el, i) => {
+  document.querySelectorAll('.fade-up, .fade-in').forEach((el) => {
     if (!el.dataset.delay) el.dataset.delay = 0;
     observer.observe(el);
   });
 
-  // Stagger service cards
   document.querySelectorAll('.service-card').forEach((card, i) => {
     card.classList.add('fade-up');
     card.dataset.delay = i * 60;
     observer.observe(card);
   });
 
-  // Stagger contact cards
   document.querySelectorAll('.contact-card').forEach((card, i) => {
     card.classList.add('fade-up');
     card.dataset.delay = i * 80;
     observer.observe(card);
   });
 
-  // ── Service book button → scroll to booking ──
+  // -- Service book button
   document.querySelectorAll('.service-book-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const service = btn.dataset.service;
       const select = document.getElementById('service');
-      if (select && service) {
-        select.value = service;
-      }
+      if (select && service) select.value = service;
       const bookingSection = document.getElementById('booking');
       const offset = 72;
       const top = bookingSection.getBoundingClientRect().top + window.scrollY - offset;
@@ -110,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Hero CTA scroll
+  // -- Hero CTA scroll
   const heroCta = document.getElementById('hero-cta');
   if (heroCta) {
     heroCta.addEventListener('click', () => {
@@ -118,10 +112,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ── Booking Form Validation ──────────────────
+  // -- Booking Form Validation + Formspree
   const bookingForm = document.getElementById('booking-form');
   const formSuccess = document.getElementById('form-success');
-  const formAgain = document.getElementById('form-again');
+  const formAgain   = document.getElementById('form-again');
 
   function showError(field, msg) {
     const group = field.closest('.form-group');
@@ -142,9 +136,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   if (bookingForm) {
-    // Live validation
     bookingForm.querySelectorAll('input, select').forEach(field => {
-      field.addEventListener('input', () => clearError(field));
+      field.addEventListener('input',  () => clearError(field));
       field.addEventListener('change', () => clearError(field));
     });
 
@@ -152,34 +145,30 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
       let valid = true;
 
-      const name = document.getElementById('name');
-      const phone = document.getElementById('phone');
+      const name    = document.getElementById('name');
+      const phone   = document.getElementById('phone');
       const service = document.getElementById('service');
-      const date = document.getElementById('date');
+      const date    = document.getElementById('date');
 
-      // Name
       if (!name.value.trim() || name.value.trim().length < 2) {
         showError(name, 'Please enter your full name.');
         valid = false;
       }
-      // Phone
       if (!phone.value.trim() || !validatePhone(phone.value)) {
         showError(phone, 'Please enter a valid phone number.');
         valid = false;
       }
-      // Service
       if (!service.value) {
         showError(service, 'Please select a service.');
         valid = false;
       }
-      // Date
       if (!date.value) {
         showError(date, 'Please select your preferred date.');
         valid = false;
       } else {
         const chosen = new Date(date.value);
-        const today = new Date();
-        today.setHours(0,0,0,0);
+        const today  = new Date();
+        today.setHours(0, 0, 0, 0);
         if (chosen < today) {
           showError(date, 'Please select a future date.');
           valid = false;
@@ -187,15 +176,37 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       if (valid) {
-        // Animate button
         const btn = bookingForm.querySelector('.submit-btn');
+        const originalHTML = btn.innerHTML;
         btn.textContent = 'Sending...';
         btn.disabled = true;
 
-        setTimeout(() => {
-          bookingForm.style.display = 'none';
-          formSuccess.classList.add('show');
-        }, 900);
+        fetch(bookingForm.action, {
+          method: 'POST',
+          body: new FormData(bookingForm),
+          headers: { 'Accept': 'application/json' }
+        })
+        .then(response => {
+          if (response.ok) {
+            bookingForm.style.display = 'none';
+            formSuccess.classList.add('show');
+            bookingForm.reset();
+          } else {
+            return response.json().then(data => {
+              const msg = data && data.errors
+                ? data.errors.map(function(err) { return err.message; }).join(', ')
+                : 'Submission failed. Please try WhatsApp instead.';
+              alert(msg);
+              btn.disabled = false;
+              btn.innerHTML = originalHTML;
+            });
+          }
+        })
+        .catch(() => {
+          alert('Network error. Please check your connection and try again.');
+          btn.disabled = false;
+          btn.innerHTML = originalHTML;
+        });
       }
     });
   }
@@ -207,59 +218,43 @@ document.addEventListener('DOMContentLoaded', () => {
       formSuccess.classList.remove('show');
       const btn = bookingForm.querySelector('.submit-btn');
       btn.disabled = false;
-      btn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg><span>Confirm Booking</span>`;
+      btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><span>Confirm Booking</span>';
     });
   }
 
-  // ── Button ripple effect ─────────────────────
+  // -- Button ripple effect
   document.querySelectorAll('.btn-primary, .submit-btn, .nav-cta').forEach(btn => {
     btn.addEventListener('click', function(e) {
-      const rect = this.getBoundingClientRect();
+      const rect   = this.getBoundingClientRect();
       const ripple = document.createElement('span');
-      const size = Math.max(rect.width, rect.height);
-      ripple.style.cssText = `
-        position:absolute;
-        width:${size}px;height:${size}px;
-        border-radius:50%;
-        background:rgba(255,255,255,0.25);
-        transform:translate(-50%,-50%) scale(0);
-        left:${e.clientX - rect.left}px;
-        top:${e.clientY - rect.top}px;
-        animation:rippleAnim 0.5s ease-out forwards;
-        pointer-events:none;
-      `;
+      const size   = Math.max(rect.width, rect.height);
+      ripple.style.cssText = 'position:absolute;width:' + size + 'px;height:' + size + 'px;border-radius:50%;background:rgba(255,255,255,0.25);transform:translate(-50%,-50%) scale(0);left:' + (e.clientX - rect.left) + 'px;top:' + (e.clientY - rect.top) + 'px;animation:rippleAnim 0.5s ease-out forwards;pointer-events:none;';
       this.appendChild(ripple);
       setTimeout(() => ripple.remove(), 600);
     });
   });
 
-  // Ripple keyframes (inject once)
   if (!document.getElementById('ripple-style')) {
     const style = document.createElement('style');
     style.id = 'ripple-style';
-    style.textContent = `
-      @keyframes rippleAnim {
-        0% { transform: translate(-50%, -50%) scale(0); opacity: 1; }
-        100% { transform: translate(-50%, -50%) scale(2.5); opacity: 0; }
-      }
-    `;
+    style.textContent = '@keyframes rippleAnim { 0% { transform:translate(-50%,-50%) scale(0); opacity:1; } 100% { transform:translate(-50%,-50%) scale(2.5); opacity:0; } }';
     document.head.appendChild(style);
   }
 
-  // ── Set min date for booking ─────────────────
+  // -- Set min date
   const dateInput = document.getElementById('date');
   if (dateInput) {
-    const today = new Date().toISOString().split('T')[0];
-    dateInput.min = today;
+    dateInput.min = new Date().toISOString().split('T')[0];
   }
 
-  // ── Counter animation for hero stats ─────────
-  function animateCounter(el, target, duration = 1500) {
+  // -- Counter animation for hero stats
+  function animateCounter(el, target, duration) {
+    duration = duration || 1500;
     const start = performance.now();
     const update = (now) => {
-      const elapsed = now - start;
+      const elapsed  = now - start;
       const progress = Math.min(elapsed / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
+      const eased    = 1 - Math.pow(1 - progress, 3);
       el.textContent = Math.round(eased * target) + (el.dataset.suffix || '');
       if (progress < 1) requestAnimationFrame(update);
     };
