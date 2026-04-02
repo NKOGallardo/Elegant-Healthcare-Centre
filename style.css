@@ -827,6 +827,79 @@ ul { list-style: none; }
   background: var(--blue-soft);
   color: var(--white);
 }
+#services {
+  padding: 60px 20px;
+  background: #f7f9fc;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.services-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.services-tab {
+  padding: 10px 16px;
+  border: none;
+  background: #e3edf7;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.services-tab.active {
+  background: #2e86c1;
+  color: white;
+}
+
+/* ✅ FIX: hide inactive panels */
+.services-tab-panel {
+  display: none;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: 0.3s ease;
+}
+
+.services-tab-panel.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Cards */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.service-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Button */
+.service-book-btn {
+  margin-top: 10px;
+  padding: 8px 14px;
+  border: none;
+  background: #2e86c1;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
 
 /* ── Booking Section ── */
 #booking {
@@ -936,6 +1009,9 @@ ul { list-style: none; }
   color: #e74c3c;
   margin-top: 0.35rem;
   display: none;
+}
+.Date {
+  background-color: #25d366;
 }
 .form-group.has-error .error-msg { display: block; }
 .select-wrap { position: relative; }
