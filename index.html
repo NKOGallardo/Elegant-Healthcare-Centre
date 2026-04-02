@@ -227,147 +227,243 @@
      SERVICES SECTION
 ══════════════════════════════════════════ -->
 <section id="services">
-  <div style="max-width:1200px;margin:0 auto;">
+  <div style="max-width:1260px;margin:0 auto;">
     <div class="section-header fade-up">
       <span class="section-label">What We Offer</span>
-      <h2 class="section-title">Our <em>Wellness</em> Services</h2>
-      <p class="section-desc">Choose from our range of premium IV therapy and wellness treatments, expertly administered to restore, revitalise, and rejuvenate.</p>
+      <h2 class="section-title">Our <em>Healthcare</em> Services</h2>
+      <p class="section-desc">Comprehensive medical care and premium wellness treatments, expertly delivered to restore, revitalise, and support every stage of your health journey.</p>
       <div class="section-divider"></div>
     </div>
-
-    <div class="services-grid">
-
-      <!-- Vitamin Drip -->
-      <div class="service-card">
-        <div class="service-icon-wrap">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg>
+ 
+      <div class="services-tabs fade-up" data-delay="100">
+        <button class="services-tab active" data-tab="iv">IV Therapy</button>
+        <button class="services-tab" data-tab="reproductive">Reproductive Health</button>
+        <button class="services-tab" data-tab="maternity">Maternity &amp; Neonatal</button>
+        <button class="services-tab" data-tab="general">General Healthcare</button>
+      </div>
+    
+    <!-- ── TAB: IV Therapy ── -->
+    <div class="services-tab-panel active" id="tab-iv">
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg></div>
+          <div class="service-name">Vitamin Drip (Cocktail)</div>
+          <div class="service-desc">A powerful blend of essential vitamins delivered directly into the bloodstream for maximum absorption and rapid results.</div>
+          <div class="service-footer"><button class="service-book-btn" data-service="Vitamin Drip (Cocktail)">Book</button></div>
         </div>
-        <div class="service-name">Vitamin Drip (Cocktail)</div>
-        <div class="service-desc">A powerful blend of essential vitamins delivered directly into the bloodstream for maximum absorption and rapid results.</div>
-        <div class="service-footer">
-          <!---div class="service-price"><span class="currency">R</span>800</div --->
-          <button class="service-book-btn" data-service="Vitamin Drip (Cocktail)">Book</button>
+        <div class="service-card">
+          <div class="service-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+          <div class="service-name">Jet Fuel</div>
+          <div class="service-desc">Vitamin C, Vitamin B Complex &amp; Collagen — premium formula for energy, skin health, and total revitalisation.</div>
+          <div class="service-footer"><button class="service-book-btn" data-service="Jet Fuel">Book</button></div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+          <div class="service-name">Neurobion (Vitamin C)</div>
+          <div class="service-desc">Targeted Vitamin C infusion to support nerve health, immunity, and overall wellbeing with lasting effects.</div>
+          <div class="service-footer"><button class="service-book-btn" data-service="Neurobion (Vitamin C)">Book</button></div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></div>
+          <div class="service-name">Glow Drip</div>
+          <div class="service-desc">Skin-brightening formula enriched with glutathione and antioxidants for a luminous, radiant complexion.</div>
+          <div class="service-footer"><button class="service-book-btn" data-service="Glow Drip">Book</button></div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div class="service-name">Immune Booster Drip</div>
+          <div class="service-desc">Fortify your immune system with a high-dose vitamin and mineral infusion designed to keep illness at bay.</div>
+          <div class="service-footer"><button class="service-book-btn" data-service="Immune Booster Drip">Book</button></div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 8v4l3 3"/><circle cx="19" cy="5" r="3"/></svg></div>
+          <div class="service-name">Biotin / Vitamin B7</div>
+          <div class="service-desc">Essential for healthy hair, nails, and skin metabolism. Promotes growth and strengthens from within.</div>
+          <div class="service-footer"><button class="service-book-btn" data-service="Biotin / Vitamin B7">Book</button></div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg></div>
+          <div class="service-name">Weight Loss Drip</div>
+          <div class="service-desc">Metabolic-boosting infusion to support your weight management journey through enhanced fat burning and energy.</div>
+          <div class="service-footer"><button class="service-book-btn" data-service="Weight Loss Drip">Book</button></div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <div class="service-name">Sports Endurance &amp; Recovery</div>
+          <div class="service-desc">Optimise athletic performance and accelerate muscle recovery with this professional-grade hydration formula.</div>
+          <div class="service-footer"><button class="service-book-btn" data-service="Sports Endurance & Recovery">Book</button></div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+          <div class="service-name">Energy Booster Drip</div>
+          <div class="service-desc">Combat fatigue and restore vitality with our targeted energy drip, packed with B vitamins and essential cofactors.</div>
+          <div class="service-footer"><button class="service-book-btn" data-service="Energy Booster Drip">Book</button></div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
+          <div class="service-name">Hangover Booster</div>
+          <div class="service-desc">Fast-acting rehydration and detox drip to restore balance and get you back on your feet quickly.</div>
+          <div class="service-footer"><button class="service-book-btn" data-service="Hangover Booster">Book</button></div>
         </div>
       </div>
-
-      <!-- Jet Fuel -->
-      <div class="service-card">
-        <div class="service-icon-wrap">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-        </div>
-        <div class="service-name">Jet Fuel</div>
-        <div class="service-desc">Vitamin C, Vitamin B Complex &amp; Collagen — premium formula for energy, skin health, and total revitalisation.</div>
-        <div class="service-footer">
-          <!---div class="service-price"><span class="currency">R</span>800</div --->
-          <button class="service-book-btn" data-service="Jet Fuel">Book</button>
-        </div>
-      </div>
-
-      <!-- Neurobion -->
-      <div class="service-card">
-        <div class="service-icon-wrap">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-        </div>
-        <div class="service-name">Neurobion (Vitamin C)</div>
-        <div class="service-desc">Targeted Vitamin C infusion to support nerve health, immunity, and overall wellbeing with lasting effects.</div>
-        <div class="service-footer">
-          <!---div class="service-price"><span class="currency">R</span>800</div --->
-          <button class="service-book-btn" data-service="Neurobion (Vitamin C)">Book</button>
-        </div>
-      </div>
-
-      <!-- Glow Drip -->
-      <div class="service-card">
-        <div class="service-icon-wrap">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-        </div>
-        <div class="service-name">Glow Drip</div>
-        <div class="service-desc">Skin-brightening formula enriched with glutathione and antioxidants for a luminous, radiant complexion.</div>
-        <div class="service-footer">
-          <!---div class="service-price"><span class="currency">R</span>800</div --->
-          <button class="service-book-btn" data-service="Glow Drip">Book</button>
-        </div>
-      </div>
-
-      <!-- Immune Booster -->
-      <div class="service-card">
-        <div class="service-icon-wrap">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        </div>
-        <div class="service-name">Immune Booster Drip</div>
-        <div class="service-desc">Fortify your immune system with a high-dose vitamin and mineral infusion designed to keep illness at bay.</div>
-        <div class="service-footer">
-          <!----div class="service-price"><span class="currency">R</span--->
-          <button class="service-book-btn" data-service="Immune Booster Drip">Book</button>
-        </div>
-      </div>
-
-      <!-- Biotin -->
-      <div class="service-card">
-        <div class="service-icon-wrap">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 8v4l3 3"/><circle cx="19" cy="5" r="3"/></svg>
-        </div>
-        <div class="service-name">Biotin / Vitamin B7</div>
-        <div class="service-desc">Essential for healthy hair, nails, and skin metabolism. Promotes growth and strengthens from within.</div>
-        <div class="service-footer">
-          <!---div class="service-price"><span class="currency">R</span>500</div ---->
-          <button class="service-book-btn" data-service="Biotin / Vitamin B7">Book</button>
-        </div>
-      </div>
-
-      <!-- Weight Loss -->
-      <div class="service-card">
-        <div class="service-icon-wrap">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg>
-        </div>
-        <div class="service-name">Weight Loss Drip</div>
-        <div class="service-desc">Metabolic-boosting infusion to support your weight management journey through enhanced fat burning and energy.</div>
-        <div class="service-footer">
-          <!--- div class="service-price"><span class="currency">R</span>850</div --->
-          <button class="service-book-btn" data-service="Weight Loss Drip">Book</button>
-        </div>
-      </div>
-
-      <!-- Sports Endurance -->
-      <div class="service-card">
-        <div class="service-icon-wrap">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        </div>
-        <div class="service-name">Sports Endurance &amp; Recovery</div>
-        <div class="service-desc">Optimise athletic performance and accelerate muscle recovery with this professional-grade hydration and nutrient formula.</div>
-        <div class="service-footer">
-          <!--- div class="service-price"><span class="currency">R</span>1,300</div --->
-          <button class="service-book-btn" data-service="Sports Endurance & Recovery">Book</button>
-        </div>
-      </div>
-
-      <!-- Energy Booster -->
-      <div class="service-card">
-        <div class="service-icon-wrap">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-        </div>
-        <div class="service-name">Energy Booster Drip</div>
-        <div class="service-desc">Combat fatigue and restore vitality with our targeted energy drip, packed with B vitamins and essential cofactors.</div>
-        <div class="service-footer">
-          <!--- div class="service-price"><span class="currency">R</span>800</div --->
-          <button class="service-book-btn" data-service="Energy Booster Drip">Book</button>
-        </div>
-      </div>
-
-      <!-- Hangover -->
-      <div class="service-card">
-        <div class="service-icon-wrap">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
-        </div>
-        <div class="service-name">Hangover Booster</div>
-        <div class="service-desc">Fast-acting rehydration and detox drip to restore balance and get you back on your feet quickly and refreshed.</div>
-        <div class="service-footer">
-          <!--- div class="service-price"><span class="currency">R</span>600</div --->
-          <button class="service-book-btn" data-service="Hangover Booster">Book</button>
-        </div>
-      </div>
-
     </div>
+ 
+    <!-- ── TAB: Reproductive Health ── -->
+    <div class="services-tab-panel" id="tab-reproductive">
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon-wrap" style="background:var(--rose-pale)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="color:var(--rose)"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+          <div class="service-name">All Family Planning Services</div>
+          <div class="service-desc">Comprehensive contraception counselling and planning to support informed reproductive choices tailored to your needs.</div>
+          <div class="service-footer"><button class="service-book-btn cat-reproductive" data-service="Family Planning Services">Book</button></div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon-wrap" style="background:var(--rose-pale)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="color:var(--rose)"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg></div>
+          <div class="service-name">IUD Insertion &amp; Removal</div>
+          <div class="service-desc">Safe and professional intrauterine device insertion and removal performed in a sterile, clinical environment.</div>
+          <div class="service-footer"><button class="service-book-btn cat-reproductive" data-service="IUD Insertion & Removal">Book</button></div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon-wrap" style="background:var(--rose-pale)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="color:var(--rose)"><path d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z"/><path d="M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/><path d="M9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5z"/></svg></div>
+          <div class="service-name">Implanon Insertion &amp; Removal</div>
+          <div class="service-desc">Subdermal contraceptive implant placement and removal carried out with precision by qualified healthcare professionals.</div>
+          <div class="service-footer"><button class="service-book-btn cat-reproductive" data-service="Implanon Insertion & Removal">Book</button></div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon-wrap" style="background:var(--rose-pale)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="color:var(--rose)"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
+          <div class="service-name">Morning After Pill</div>
+          <div class="service-desc">Emergency contraception with professional counselling, available promptly when timing matters most.</div>
+          <div class="service-footer"><button class="service-book-btn cat-reproductive" data-service="Morning After Pill (Emergency Contraception)">Book</button></div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon-wrap" style="background:var(--rose-pale)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="color:var(--rose)"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+          <div class="service-name">Pregnancy Testing</div>
+          <div class="service-desc">Accurate and confidential pregnancy testing with compassionate professional support and guidance on next steps.</div>
+          <div class="service-footer"><button class="service-book-btn cat-reproductive" data-service="Pregnancy Testing">Book</button></div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon-wrap" style="background:var(--rose-pale)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="color:var(--rose)"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+          <div class="service-name">Pap Smear (Cervical Screening)</div>
+          <div class="service-desc">Cervical cancer screening in a private, respectful setting. Early detection saves lives — book your pap smear today.</div>
+          <div class="service-footer"><button class="service-book-btn cat-reproductive" data-service="Pap Smear (Cervical Cancer Screening)">Book</button></div>
+        </div>
+      </div>
+    </div>
+ 
+    <!-- ── TAB: Maternity & Neonatal ── -->
+    <div class="services-tab-panel" id="tab-maternity">
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon-wrap" style="background:var(--mint-pale)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="color:var(--mint)"><circle cx="12" cy="8" r="4"/><path d="M9 14c-4 0-6 2-6 4v2h18v-2c0-2-2-4-6-4"/></svg></div>
+          <div class="service-name">ANC First Visit &amp; Follow-up</div>
+          <div class="service-desc">Antenatal care from your first visit through ongoing check-ups, monitoring both mother and baby throughout pregnancy.</div>
+          <div class="service-footer"><button class="service-book-btn cat-maternity" data-service="ANC (Antenatal Care) First Visit & Follow-up">Book</button></div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon-wrap" style="background:var(--mint-pale)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="color:var(--mint)"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+          <div class="service-name">Birth Options</div>
+          <div class="service-desc">Flexible birth planning — choose between a comfortable centre delivery or a safe, assisted home birth with our qualified midwives.</div>
+          <div class="service-footer"><button class="service-book-btn cat-maternity" data-service="Birth Options (Centre or Home Birth)">Book</button></div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon-wrap" style="background:var(--mint-pale)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="color:var(--mint)"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+          <div class="service-name">3-Day Postnatal Care</div>
+          <div class="service-desc">Dedicated postnatal care for both mother and baby over the critical first three days — monitoring, support, and education.</div>
+          <div class="service-footer"><button class="service-book-btn cat-maternity" data-service="3-Day Postnatal Care (Mother & Baby)">Book</button></div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon-wrap" style="background:var(--mint-pale)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="color:var(--mint)"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
+          <div class="service-name">Baby Wellness &amp; Immunizations</div>
+          <div class="service-desc">Regular baby wellness checks and scheduled immunizations to monitor growth, development, and build immunity from day one.</div>
+          <div class="service-footer"><button class="service-book-btn cat-maternity" data-service="Baby Wellness Checks & Immunizations">Book</button></div>
+        </div>
+      </div>
+    </div>
+ 
+    <!-- ── TAB: General Medical ── -->
+    <div class="services-tab-panel" id="tab-general">
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon-wrap" style="background:var(--indigo-pale)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="color:var(--indigo)"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+          <div class="service-name">General Consultation</div>
+          <div class="service-desc">Thorough general medical consultation with the option to include or exclude medication — flexible, patient-centred care.</div>
+          <div class="service-footer"><button class="service-book-btn cat-general" data-service="General Consultation">Book</button></div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon-wrap" style="background:var(--indigo-pale)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="color:var(--indigo)"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+          <div class="service-name">Follow-up Consultations</div>
+          <div class="service-desc">Continuity of care with scheduled follow-up visits to track your progress, adjust treatment, and ensure full recovery.</div>
+          <div class="service-footer"><button class="service-book-btn cat-general" data-service="Follow-up Consultation">Book</button></div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon-wrap" style="background:var(--indigo-pale)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="color:var(--indigo)"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div class="service-name">STI Treatment</div>
+          <div class="service-desc">Confidential sexually transmitted infection diagnosis and treatment with medication included — private, non-judgmental care.</div>
+          <div class="service-footer"><button class="service-book-btn cat-general" data-service="STI Treatment">Book</button></div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon-wrap" style="background:var(--indigo-pale)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="color:var(--indigo)"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+          <div class="service-name">HIV Counselling, Testing &amp; Management</div>
+          <div class="service-desc">Compassionate HIV counselling, accurate testing, and ongoing management plans to support long-term health and wellbeing.</div>
+          <div class="service-footer"><button class="service-book-btn cat-general" data-service="HIV Counselling, Testing & Management">Book</button></div>
+        </div>
+      </div>
+    </div>
+ 
+    <!-- ── TAB: Screenings ── -->
+    <div class="services-tab-panel" id="tab-screenings">
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon-wrap" style="background:var(--amber-pale)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="color:var(--amber)"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+          <div class="service-name">Blood Pressure Monitoring</div>
+          <div class="service-desc">Regular blood pressure checks to detect hypertension early and manage cardiovascular health proactively.</div>
+          <div class="service-footer"><button class="service-book-btn cat-screenings" data-service="Blood Pressure (BP) Monitoring">Book</button></div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon-wrap" style="background:var(--amber-pale)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="color:var(--amber)"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg></div>
+          <div class="service-name">Glucose (Blood Sugar) Testing</div>
+          <div class="service-desc">Fast and accurate blood glucose testing to screen for diabetes and monitor sugar levels in existing patients.</div>
+          <div class="service-footer"><button class="service-book-btn cat-screenings" data-service="Glucose (Blood Sugar) Testing">Book</button></div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon-wrap" style="background:var(--amber-pale)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="color:var(--amber)"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg></div>
+          <div class="service-name">Cholesterol Testing</div>
+          <div class="service-desc">Lipid profile testing to assess cholesterol levels and reduce your risk of heart disease and stroke.</div>
+          <div class="service-footer"><button class="service-book-btn cat-screenings" data-service="Cholesterol Testing">Book</button></div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon-wrap" style="background:var(--amber-pale)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="color:var(--amber)"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <div class="service-name">DNA Testing</div>
+          <div class="service-desc">DNA testing facilitated with professional guidance. Note: laboratory fees are paid separately by the patient.</div>
+          <div class="service-footer"><button class="service-book-btn cat-screenings" data-service="DNA Testing">Book</button></div>
+        </div>
+      </div>
+    </div>
+ 
+    <!-- ── TAB: Procedures & Wound Care ── -->
+    <div class="services-tab-panel" id="tab-procedures">
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon-wrap" style="background:var(--teal-pale)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="color:var(--teal)"><path d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z"/><path d="M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/><path d="M9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5z"/><path d="M3.5 14H5v1.5c0 .83-.67 1.5-1.5 1.5S2 16.33 2 15.5 2.67 14 3.5 14z"/></svg></div>
+          <div class="service-name">Initial Wound Dressing</div>
+          <div class="service-desc">Professional first-line wound assessment and dressing with sterile technique to promote healing and prevent infection.</div>
+          <div class="service-footer"><button class="service-book-btn cat-procedures" data-service="Initial Wound Dressing">Book</button></div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon-wrap" style="background:var(--teal-pale)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="color:var(--teal)"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
+          <div class="service-name">Wound Care Follow-up</div>
+          <div class="service-desc">Ongoing wound management and re-dressing sessions to monitor healing progress and adjust care as needed.</div>
+          <div class="service-footer"><button class="service-book-btn cat-procedures" data-service="Wound Care Follow-up">Book</button></div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon-wrap" style="background:var(--teal-pale)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="color:var(--teal)"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <div class="service-name">Suture (Stitch) Removal</div>
+          <div class="service-desc">Safe and hygienic suture removal once healing is confirmed, performed with care to minimise discomfort and scarring.</div>
+          <div class="service-footer"><button class="service-book-btn cat-procedures" data-service="Suture (Stitch) Removal">Book</button></div>
+        </div>
+      </div>
+    </div>
+ 
   </div>
 </section>
 
@@ -458,6 +554,27 @@
               <option value="Sports Endurance & Recovery">Sports Endurance &amp; Recovery —</option>
               <option value="Energy Booster Drip">Energy Booster Drip — </option>
               <option value="Hangover Booster">Hangover Booster — </option>
+              <option value="All Family Planning Services">All Family Planning Services</option>
+              <option value="Insertion & Removal"> Insertion & Removal</option>
+              <option value="Insertion & Removal"> Insertion & Removal</option>
+              <option value="Morning After Pill (Emergency Contraception)">Morning After Pill (Emergency Contraception)</option>
+              <option value="Pregnancy Testing"> Pregnancy Testing</option>
+              <option value="Pap Smear (Cervical Cancer Screening)">Pap Smear (Cervical Cancer Screening)</option>
+              <option value="ANC (Antenatal Care) First Visit & Follow-up">ANC (Antenatal Care) First Visit & Follow-up</option>
+              <option value="Birth Options: At the Centre or Home Birth">Birth Options: At the Centre or Home Birth</option>
+              <option value="3-Day Postnatal Care (For Mother & Baby)">3-Day Postnatal Care (For Mother & Baby)</option>
+              <option value="Baby Wellness Checks & Immunizations">Baby Wellness Checks & Immunizations</option>
+              <option value="Consultation (Option for Medication Included or Excluded)">Consultation (Option for Medication Included or Excluded)</option>
+              <option value="Consultations"> Consultations</option>
+              <option value="STI (Sexually Transmitted Infection) Treatment (Medication Included)">STI (Sexually Transmitted Infection) Treatment (Medication Included)</option>
+              <option value="HIV Counseling, Testing, & Management">HIV Counseling, Testing, & Management</option>
+              <option value="Blood Pressure (BP) Monitoring">Blood Pressure (BP) Monitoring</option>
+              <option value=" (Blood Sugar) Testing"> (Blood Sugar) Testing</option>
+              <option value=" Testing"> Testing</option>
+              <option value=" Testing (Lab fees paid separately)"> Testing (Lab fees paid separately)</option>
+              <option value="Initial Wound Dressing">Initial Wound Dressing</option>
+              <option value="Wound Care Follow-up">Wound Care Follow-up</option>
+              <option value="Suture (Stitch) Removal">Suture (Stitch) Removal</option>
             </select>
           </div>
           <span class="error-msg">Please select a service.</span>
