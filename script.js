@@ -1,6 +1,4 @@
-/* =============================================
-   ELEGANT HEALTHCARE CENTRE — JAVASCRIPT
-   ============================================= */
+//    ELEGANT HEALTHCARE CENTRE — JAVASCRIPT
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -60,6 +58,29 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // -- Service Category Tabs
+  const tabs   = document.querySelectorAll('.services-tab');
+  const panels = document.querySelectorAll('.services-tab-panel');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t   => t.classList.remove('active'));
+      panels.forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+
+      const panel = document.getElementById('tab-' + tab.dataset.tab);
+      if (panel) {
+        panel.classList.add('active');
+        // Animate newly visible cards in with stagger
+        panel.querySelectorAll('.service-card').forEach((card, i) => {
+          card.classList.remove('visible');
+          card.classList.add('fade-up');
+          setTimeout(() => card.classList.add('visible'), i * 55 + 10);
+        });
+      }
+    });
+  });
+
   // -- Scroll fade animations
   const observerOptions = { threshold: 0.12, rootMargin: '0px 0px -40px 0px' };
   const observer = new IntersectionObserver((entries) => {
@@ -91,11 +112,11 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(card);
   });
 
-  // -- Service book button
+  // -- Service book button > pre-select & scroll to booking
   document.querySelectorAll('.service-book-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const service = btn.dataset.service;
-      const select = document.getElementById('service');
+      const select  = document.getElementById('service');
       if (select && service) select.value = service;
       const bookingSection = document.getElementById('booking');
       const offset = 72;
