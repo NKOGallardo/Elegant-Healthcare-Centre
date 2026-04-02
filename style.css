@@ -1009,9 +1009,14 @@ ul { list-style: none; }
   color: #e74c3c;
   margin-top: 0.35rem;
   display: none;
-}
-.Date {
-  background-color: #25d366;
+}input[type="date"]::-webkit-calendar-picker-indicator {
+    background-color: #007bff; /* Your blue color */
+    padding: 5px;
+    border-radius: 4px; /* Makes it a rounded square */
+    cursor: pointer;
+    
+    /* This filter makes the black icon turn white */
+    filter: invert(1); 
 }
 .form-group.has-error .error-msg { display: block; }
 .select-wrap { position: relative; }
